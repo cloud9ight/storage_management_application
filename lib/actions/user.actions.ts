@@ -16,6 +16,7 @@ import { parseStringify } from "@/lib/utils";
 import { cookies } from "next/headers";
 
 import { redirect } from "next/navigation";
+import { avatarPlaceholderUrl } from "@/constants";
 
 const getUserByEmail = async (email: string) => {
   const { databases } = await createAdminClient();
@@ -68,8 +69,7 @@ export const createAccount = async ({
       {
         fullName,
         email,
-        avatar:
-          "https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg",
+        avatar: avatarPlaceholderUrl,
         accountId,
       }
     );
