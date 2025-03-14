@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { createAccount, signInUser } from "@/lib/actions/user.actions";
-import OtpModal from "./ui/OtpModal";
+import OtpModal from "./OtpModal";
 
 type FormType = "sign-in" | "sign-up";
 
