@@ -90,12 +90,24 @@ const createQueries = (
   return queries;
 };
 
+// export const getFiles = async () => {
+//   const { databases } = await createAdminClient();
+//   try {
+//     const currentUser = await getCurrentUser();
+
+//     if (!currentUser) throw new Error("User not found");
+//     const queries = createQueries(currentUser);
+//   } catch (error) {
+//     handleError(error, "Failed to get files");
+//   }
+// };
+
 export const getFiles = async ({
   types = [],
   searchText = "",
   sort = "$createdAt-desc",
   limit,
-}: GetFilesProps) => {
+}: GetFilesProps = {}) => {
   const { databases } = await createAdminClient();
 
   try {
