@@ -79,6 +79,8 @@ const createQueries = (
   if (searchText) queries.push(Query.contains("name", searchText));
   if (limit) queries.push(Query.limit(limit));
 
+  // const [sortBy, orderBy] = sort.split("-");
+
   if (sort) {
     const [sortBy, orderBy] = sort.split("-");
 
@@ -101,6 +103,13 @@ const createQueries = (
 //     handleError(error, "Failed to get files");
 //   }
 // };
+
+interface GetFilesProps {
+  types: FileType[];
+  searchText?: string;
+  sort?: string;
+  limit?: number;
+}
 
 export const getFiles = async ({
   types = [],
